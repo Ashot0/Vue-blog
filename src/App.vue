@@ -1,33 +1,25 @@
 <template>
-	<div>
-		<button @click="addLike">Like</button>
-		<button @click="addDisike">Dislike</button>
-		<div>Количество лайков <strong>{{ likes }}</strong></div>
-		<div>Количество дизлайков <strong>{{ dislikes }}</strong></div>
+	<nav-bar></nav-bar>
+	<div class="app">
+		<router-view></router-view>
 	</div>
 </template>
 
 <script>
+import NavBar from "@/components/UI/NavBar.vue";
+
 export default {
-	data() {
-		return {
-			likes: 0,
-			dislikes: 0,
-		}
-	},
-	methods: {
-		addLike() {
-			this.likes += 1;
-
-		},
-		addDisike() {
-			this.dislikes += 1;
-		}
-	}
-
-}
+	components: { NavBar },
+};
 </script>
 
-<style></style>
-
-<!-- Single file component -->
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.app {
+	padding: 20px;
+}
+</style>
