@@ -1,5 +1,3 @@
-# vueulbi
-
 ## Project setup
 ```
 npm install
